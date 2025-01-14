@@ -41,7 +41,7 @@ body {
     cursor: none;
     /*these lines make percentage based sizing work*/
     height: 100vh;
-
+    background-color: var(--light-color);
 }
 
 a {
@@ -220,8 +220,8 @@ footer {
     z-index: -1;
     background-image: url(images/Flowers.png);
     background-size: cover;
-    width: 704px;
-    height: 357px;
+    width: 525px;
+    height: 263px;
 }
 
 /*---Medium Screens---*/
@@ -329,6 +329,13 @@ footer {
     body {
         height: fit-content;
         gap: 16px;
+    }
+}
+
+@media (min-height: 700px) {
+    #flower-image {
+        width: 700px;
+        height: 350px;
     }
 }
 
