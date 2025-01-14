@@ -116,10 +116,17 @@ p {
 aside {
     height: 15%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
     animation: slideUpAndFade 0.75s forwards;
+}
+
+#availability-text {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 #availability-indicator {
