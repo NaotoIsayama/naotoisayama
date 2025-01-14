@@ -76,11 +76,11 @@ p {
 
 
 
-/*---slide up---*/
+/*---slide up and fade animation---*/
 @keyframes slideUpAndFade{
     from {
         transform: translateY(25px);
-        opacity: 0.25;
+        opacity: 0;
     }
 
     to {
@@ -119,6 +119,7 @@ aside {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    animation: slideUpAndFade 0.75s forwards;
 }
 
 #availability-indicator {
@@ -128,8 +129,6 @@ aside {
     width: 12px;
     animation: colorCycle 1.25s infinite;
 }
-
-
 
 .content-flex-container {
     height: 75%;
