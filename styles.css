@@ -40,26 +40,6 @@ body {
     height: 100vh;
 }
 
-/* Custom cursor styling */
-#custom-cursor {
-    position: fixed; /* Fixes the cursor relative to the viewport */
-    top: 50%;
-    left:50%;
-    width: 20px; /* Circle size */
-    height: 20px;
-    background-color: rgba(130, 73, 76, 0.7); /* Circle color */
-    border-radius: 50%; /* Makes it a circle */
-    pointer-events: none; /* Prevent blocking interactions */
-    transform: translate(-50%, -50%); /* Centers the circle on the mouse pointer */
-    z-index: 10000;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-/* Enlarged state */
-#custom-cursor.enlarged {
-    transform: scale(1.5); /* Enlarge the cursor */
-}
-
 a {
     padding: 0;
     margin: 0;
@@ -249,12 +229,11 @@ footer {
 @media (min-width: 1200px) {
 
     aside {
+        flex-direction: row;
         justify-content: flex-end;
         align-items: center;
         height: 10%;
     }
-    
-
 
     .content-flex-container {
         height: 80%;
@@ -311,6 +290,27 @@ footer {
         align-items: center;
         justify-content: flex-end;
         height: 10%;
+    }
+
+
+    /* Custom cursor styling */
+    #custom-cursor {
+        position: fixed; /* Fixes the cursor relative to the viewport */
+        top: 50%;
+        left:50%;
+        width: 20px; /* Circle size */
+        height: 20px;
+        background-color: rgba(130, 73, 76, 0.7); /* Circle color */
+        border-radius: 50%; /* Makes it a circle */
+        pointer-events: none; /* Prevent blocking interactions */
+        transform: translate(-50%, -50%); /* Centers the circle on the mouse pointer */
+        z-index: 10000;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    /* Enlarged state */
+    #custom-cursor.enlarged {
+        transform: scale(1.5); /* Enlarge the cursor */
     }
 }
 
