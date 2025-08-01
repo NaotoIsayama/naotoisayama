@@ -167,7 +167,7 @@ header {
 }
 
 #logo {
-    width: 20%;
+    width: 100%;
     animation: slideUpAndFade 1.0s forwards;
 }
 
