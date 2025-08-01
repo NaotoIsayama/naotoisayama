@@ -1,47 +1,66 @@
 /*---CSS styles---*/
 /*---note that styles outside of media queries are for mobile---*/
+.borderred {
+    border: solid red;
+}
+
+html {
+    font-size: 16px;
+}
 
 :root {
     /* colors */
     --light-color:#FAF9F6;
-    --dark-color:#000000;
-    --accent-color-1: #82494C;
-    --accent-color-2: #9C9B6C;
+    --dark-color:#161616;
+    --accent-color: #855453;
     --available-color: #00BD23;
 
     /* default fonts */
-    --header-font: "Major Mono Display", serif;
+    --header-font: "Gloock", serif;
     --body-font: "Lato", serif;
 
     /* font sizes */
-    --body-size: 16px;
-    --small-title: 25px;
-    --medium-title: 41px;
-    --page-title:  65px;
-    --nav-links: 105px;
+    --body-size: 1.618rem; /* 1 * golden ratio*/
+    --title: 6.472rem; /* 4 * golden ratio */ 
+}
+
+.header-font {
+    font-size: var(--title);
+    font-family: var(--header-font);
+    font-weight: 500;
+    color: var(--light-color);
+    transition: color 0.25s ease-in-out;
+}
+
+.header-font:hover {
+    color: var(--accent-color);
 }
 
 .body-font-extra-light {
+    color: var(--light-color);
     font-family: var(--body-font);
     font-weight: 100;
 }
 
 .body-font-light {
+    color: var(--light-color);
     font-family: var(--body-font);
     font-weight: 300;
+    font-size: var(--body-size);
 }
 
 body {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     margin: 0;
-    padding: 0 3%;
+    padding: 3% 5%;
     position: relative;
-    cursor: none;
     /*these lines make percentage based sizing work*/
-    height: 100vh;
-    background-color: var(--light-color);
+    background-color: var(--dark-color);
 }
 
 a {
@@ -93,26 +112,43 @@ p {
     93.75% {background-color: #00CD23;}
 }
 
+/* grain oscillation--*/
+@keyframes grainOscillate {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}
+
+#grain {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-image: url('images/grain.png');
+    background-repeat: repeat;
+    opacity: 0.25;
+    animation: grainOscillate 1s steps(10) infinite;
+}
+
+#custom-cursor {
+    background-image: url(images/custom-cursor.png);
+}
 
 
 /*------------------------------styles for index.html------------------------------*/
 
-aside {
-    height: 15%;
+header {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
+}
+
+#logo {
+    width: 20%;
     animation: slideUpAndFade 0.75s forwards;
 }
 
-#availability-text {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
+/*use this class if you want the oscilatting green icon*/
 #availability-indicator {
     border-radius: 50%;
     background-color: var(--available-color);
@@ -121,225 +157,55 @@ aside {
     animation: colorCycle 1.25s infinite;
 }
 
-.content-flex-container {
-    height: 75%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 20px;
+#live-clock {
+    animation: slideUpAndFade 0.75s forwards;
 }
-
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#logo-box {
-    display: flex;
-    justify-content: space-between;
-    width: 250px;
-    aspect-ratio: 1 / 1;
-    border: solid var(--dark-color) 3px; 
-}
-
-h1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-family: var(--header-font);
-    font-weight: 300;
-}
-
-.logo-line {
-    font-size: var(--medium-title);
-    margin: 0 20px;
-
-}
-
-.logo-subheader {
-    font-size: var(--small-title);
-    font-family: var(--body-font);
-    line-height: 31px;
-    margin: 0 20px;
-
-}
-
-
 
 nav {
+    height: 100%;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-end;
+    padding: 1% 0;
+}
+
+#flower-image {
+    aspect-ratio: 16/9;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 66%;
 }
 
 ul {
+    height: 100%;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: var(--medium-title); /*1.5 line spacing on mobile*/
-    align-items: center;
+    align-items: flex-end;
     list-style-type: none;
     transform: translateY(15px);
     animation: slideUpAndFade 0.75s forwards;
 }
 
 li a {
-    font-family: var(--header-font);
-    font-size: var(--medium-title);
     text-decoration: none;
-    color:inherit;
-    transition: color 0.25s ease-in-out;
-}
-
-li a:hover {
-    color: var(--accent-color-1);
-}
-
-
-
-
-img {
-    position: absolute;
-    z-index: 0;
 }
 
 footer {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     height: 10%; 
 }
 
-#flower-image {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    background-image: url(images/Flowers.png);
-    background-size: cover;
-    width: 525px;
-    height: 263px;
+footer p {
+    animation: slideUpAndFade 0.75s forwards;
 }
 
-/*---Medium Screens---*/
-@media (min-width: 500px) {
-    li a{
-        font-size: var(--page-title);
-    }
-}
-
-@media (min-width: 1200px) {
-
-    body {
-        justify-content: space-around;
-    }
-
-    aside {
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        height: 10%;
-    }
-
-    .content-flex-container {
-        height: 80%;
-        display: flex;
-        flex-direction: row;
-    }
-
-    header {
-        width: 33%;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
-
-    #logo-box {
-        width: 375px;
-        aspect-ratio: 1 / 1;
-    }
-
-    .logo-line {
-        font-size: var(--page-title);
-    }
-
-    .logo-subheader {
-        font-size: var(--medium-title);
-    }
-    
 
 
-    nav {
-        height: 100%;
-        width: 67%;
-        align-items: flex-start;
-        justify-content: flex-end;
-    }
-    
-    ul {
-        height: 100%;
-        align-items: flex-end;
-    }
-    
-    li a{
-        /*hacky fix to make the top of the text line up with the top of the logo*/
-        line-height: 0.6;
-        font-size: var(--nav-links);
-    }
-    
-    
-    h1 {
-        font-size: var(--medium-title);
-        font-family: var(--header-font);
-        font-weight: 300;
-    }
-
-    footer {
-        align-items: center;
-        justify-content: flex-end;
-        height: 10%;
-    }
-
-
-    /* Custom cursor styling */
-    #custom-cursor {
-        position: fixed; /* Fixes the cursor relative to the viewport */
-        top: 50%;
-        left:50%;
-        width: 20px; /* Circle size */
-        height: 20px;
-        background-color: rgba(130, 73, 76, 0.7); /* Circle color */
-        border-radius: 50%; /* Makes it a circle */
-        pointer-events: none; /* Prevent blocking interactions */
-        transform: translate(-50%, -50%); /* Centers the circle on the mouse pointer */
-        z-index: 10000;
-        transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-
-    /* Enlarged state */
-    #custom-cursor.enlarged {
-        transform: scale(1.5); /* Enlarge the cursor */
-    }
-}
-
-/* for landscape mode on larger mobile devices*/
-@media (max-height: 825px) and (max-width: 1200px){
-    body {
-        height: fit-content;
-        gap: 16px;
-    }
-}
-
-@media (min-height: 700px) {
-    #flower-image {
-        width: 700px;
-        height: 350px;
-    }
-}
 
 /*------------------------------styles for index.html------------------------------*/
-
-
-
