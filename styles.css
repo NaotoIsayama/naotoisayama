@@ -21,7 +21,7 @@ html {
 
     /* font sizes */
     --body-size: 1.618rem; /* 1 * golden ratio*/
-    --title: clamp(4.0rem, 5vw, 8rem); /* 4 * golden ratio */ 
+    --title: clamp(4.0rem, 7vw, 8rem); /* 4 * golden ratio */ 
 }
 
 .header-font {
@@ -164,7 +164,7 @@ header {
 
 #logo {
     width: 20%;
-    animation: slideUpAndFade 0.75s forwards;
+    animation: slideUpAndFade 1.0s forwards;
 }
 
 /*use this class if you want the oscilatting green icon*/
@@ -207,7 +207,7 @@ ul {
     align-items: flex-end;
     list-style-type: none;
     transform: translateY(15px);
-    animation: slideUpAndFade 0.75s forwards;
+    animation: slideUpAndFade 1.25s forwards;
 }
 
 li a {
