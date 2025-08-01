@@ -247,7 +247,7 @@ footer p {
 @media (max-width: 1025px) {
 
     :root {
-        --title: clamp(2.5rem, 6vw, 6rem);
+        --title: clamp(3.0rem, 6vw, 6rem);
     }
     body {
         padding: 10%;
