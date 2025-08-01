@@ -162,6 +162,10 @@ header {
     align-items: flex-start;
 }
 
+header:has(a img:hover) ~ img {
+    filter: blur(4px);
+}
+
 #logo-link-wrapper {
     width: 20%;
 }
