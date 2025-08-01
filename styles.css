@@ -246,12 +246,14 @@ footer p {
 
 @media (max-width: 1025px) {
 
+    :root {
+        --title: clamp(2.5rem, 6vw, 6rem);
+    }
     body {
         padding: 10%;
         overflow: scroll;
         height: max-content;
     }
-
 
     /* Undo hover effect for mobile */
     nav:has(li:hover) + img {
@@ -278,7 +280,7 @@ footer p {
 
     nav {
         justify-content: flex-start;
-        padding: 7% 0;
+        margin: 4rem 0;
     }
 
     ul {
