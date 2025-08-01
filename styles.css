@@ -115,6 +115,7 @@ p {
 /* grain oscillation--*/
 @keyframes grainOscillate {
     0% { background-position: 0 0; }
+    50% { background-position: -150px -150px;}
     100% { background-position: 150px 150px; }
 }
 
@@ -125,8 +126,8 @@ p {
     z-index: 9999;
     background-image: url('images/grain.png');
     background-repeat: repeat;
-    opacity: 0.3;
-    animation: grainOscillate 1s steps(10) infinite;
+    opacity: 0.22;
+    animation: grainOscillate 1.5s steps(10) infinite;
 }
 
 #custom-cursor {
