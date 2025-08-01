@@ -21,7 +21,7 @@ html {
 
     /* font sizes */
     --body-size: 1.618rem; /* 1 * golden ratio*/
-    --title: 6.472rem; /* 4 * golden ratio */ 
+    --title: clamp(4.0rem, 5vw, 8rem); /* 4 * golden ratio */ 
 }
 
 .header-font {
@@ -50,6 +50,7 @@ html {
 }
 
 body {
+    cursor: none;
     box-sizing: border-box;
     height: 100vh;
     width: 100vw;
@@ -131,7 +132,24 @@ p {
 }
 
 #custom-cursor {
-    background-image: url(images/custom-cursor.png);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 24px; /* or whatever size you want */
+    height: 24px;
+    background-image: url('images/custom-cursor.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease-out, width 0.2s ease-out, height 0.2s ease-out;
+}
+
+#custom-cursor.enlarged {
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%) scale(1.5);
 }
 
 
@@ -176,6 +194,7 @@ nav {
     left: 0;
     z-index: -1;
     width: 66%;
+    animation: slideUpAndFade 1.75s forwards;
 }
 
 ul {
