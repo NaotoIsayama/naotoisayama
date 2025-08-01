@@ -283,6 +283,10 @@ footer p {
         width: 100%;
     }
 
+    .image-blur {
+        filter: blur(4px);
+    }
+
     footer {
         justify-content: center;
     }
