@@ -127,16 +127,16 @@ p {
     z-index: 9999;
     background-image: url('images/grain.png');
     background-repeat: repeat;
-    opacity: 0.22;
+    opacity: 0.25;
     animation: grainOscillate 1.5s steps(10) infinite;
 }
 
 #custom-cursor {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 24px; /* or whatever size you want */
-    height: 24px;
+    top: 10%;
+    left: 15% ;
+    width: 20px; /* or whatever size you want */
+    height: 20px;
     background-image: url('images/custom-cursor.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -147,8 +147,8 @@ p {
 }
 
 #custom-cursor.enlarged {
-    width: 30px;
-    height: 30px;
+    width: 23px;
+    height: 23px;
     transform: translate(-50%, -50%) scale(1.5);
 }
 
@@ -159,7 +159,7 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 #logo-link-wrapper {
@@ -191,14 +191,19 @@ nav {
     padding: 1% 0;
 }
 
+nav:has(li:hover) + img {
+    filter: blur(4px);
+}
+
 #flower-image {
     aspect-ratio: 16/9;
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: -1;
+    z-index: -1 ;
     width: 66%;
     animation: slideUpAndFade 1.75s forwards;
+    transition: filter 0.25s ease-in-out;
 }
 
 ul {
@@ -216,6 +221,7 @@ ul {
 
 li a {
     text-decoration: none;
+    
 }
 
 footer {
