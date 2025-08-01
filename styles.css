@@ -162,6 +162,10 @@ header {
     align-items: center;
 }
 
+#logo-link-wrapper {
+    width: 20%;
+}
+
 #logo {
     width: 20%;
     animation: slideUpAndFade 1.0s forwards;
