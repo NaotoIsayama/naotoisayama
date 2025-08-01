@@ -243,3 +243,48 @@ footer p {
 
 
 /*------------------------------styles for index.html------------------------------*/
+
+@media (max-width: 1025px) {
+
+    body {
+        padding: 7% 1%;
+        overflow: scroll;
+        box-sizing: content-box;
+        height: max-content;
+    }
+
+    #custom-cursor {
+        display: none;
+    }
+ 
+    header {
+        flex-direction: column;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    #logo-link-wrapper {
+        width: 100%;
+    }
+
+    nav {
+        justify-content: center;
+        padding: 7% 0;
+    }
+
+    ul {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    #flower-image {
+        width: 100%;
+    }
+
+    footer {
+        justify-content: center;
+    }
+
+}
