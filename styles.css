@@ -127,7 +127,7 @@ p {
     z-index: 9999;
     background-image: url('images/grain.png');
     background-repeat: repeat;
-    opacity: 0.25;
+    opacity: 0.3;
     animation: grainOscillate 1.5s steps(10) infinite;
 }
 
@@ -156,6 +156,7 @@ p {
 /*------------------------------styles for index.html------------------------------*/
 
 header {
+    box-sizing: border-box;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -172,6 +173,7 @@ header:has(a img:hover) ~ img {
 
 #logo {
     width: 100%;
+    transition: border-bottom 0.25s ease-in-out;
     animation: slideUpAndFade 1.0s forwards;
 }
 
@@ -286,7 +288,7 @@ footer p {
     ul {
         justify-content: center;
         align-items: flex-start;
-        gap: 3rem;
+        gap: 1.5rem;
     }
 
     #flower-image {
